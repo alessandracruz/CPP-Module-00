@@ -6,36 +6,22 @@
 /*   By: acastilh <acastilh@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 20:54:44 by acastilh          #+#    #+#             */
-/*   Updated: 2024/04/25 21:46:18 by acastilh         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:08:16 by acastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include <iomanip> // Para std::setw e std::setfill
+#include <iomanip>
 #include <iostream>
 
-PhoneBook::PhoneBook() : current_index(0), contact_count(0)
-{
-	// Inicializa os contatos como vazios ou define um estado inicial adequado
-}
-
-void PhoneBook::add_contact(const Contact& contact)
-{
-	int	index;
-
-	index = contact_count % 8;
-	// Determina o índice para inserção/substituição
-	contacts[index] = contact;
-	if (contact_count < 8)
-	{
-		contact_count++;
-		// Aumenta o contador total de contatos apenas se for menor que 8
-	}
-	else
-	{
-		current_index = (current_index + 1) % 8;
-		// Atualiza o índice do contato mais antigo
-	}
+void PhoneBook::add_contact(const Contact& contact) {
+    if (contact_count < 8) {
+        contacts[current_index] = contact;
+        contact_count++;
+    } else {
+        contacts[current_index] = contact;  // Substitui o contato mais antigo
+    }
+    current_index = (current_index + 1) % 8;  // Atualiza o índice circularmente
 }
 
 void PhoneBook::display_contacts() const
@@ -86,3 +72,4 @@ std::string PhoneBook::truncate(const std::string &str, size_t width) const
 	}
 	return (str);
 }
+

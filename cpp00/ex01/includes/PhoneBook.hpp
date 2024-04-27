@@ -6,7 +6,7 @@
 /*   By: acastilh <acastilh@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:18:36 by acastilh          #+#    #+#             */
-/*   Updated: 2024/04/22 21:27:49 by acastilh         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:02:01 by acastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@
 class PhoneBook
 {
   private:
-	Contact contacts[8];
-	int current_index;
-	int contact_count;
+private:
+    Contact contacts[8];
+    int current_index;   // Índice atual para inserção de novo contato
+    int contact_count;   // Total de contatos adicionados
 
   public:
-	PhoneBook(); // Construtor
+	PhoneBook() : current_index(0), contact_count(0) {}
 	void add_contact(const Contact &contact);
 	void display_contacts() const;
 	void display_contact_details(int index) const;
