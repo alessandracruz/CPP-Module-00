@@ -12,8 +12,7 @@ Aprendemos a montar as classes privadas e públicas de cada objeto.
 
 ## CPP01
 ### ex00
-Qual o objetivo real do exercício? Você precisa determinar em que caso é melhor alocar os zumbis na pilha (stack) ou no heap para entender quais são as vantagens e desvantagens de uma escolha para a outra.
-A escolha entre alocar objetos na pilha (stack) ou no heap é uma parte importante do gerenciamento de memória em C++ e pode impactar tanto a performance quanto a segurança do seu programa.
+Este exercício serve para praticar a criação de classes em C++, bem como a alocação e desalocação de memória.Mas qual o objetivo real do exercício? Entender em que caso é melhor alocar os zumbis na pilha (stack) ou no heap para analisar quais são as vantagens e desvantagens de uma escolha para a outra. A escolha entre alocar objetos na pilha (stack) ou no heap é uma parte importante do gerenciamento de memória em C++ e pode impactar tanto a performance quanto a segurança do programa.
 
 ## Alocação na Pilha (Stack):
 ## Vantagens:
@@ -45,3 +44,14 @@ Quando a função termina, o livro é automaticamente retirado da prateleira (is
 
 O heap é como uma biblioteca enorme, onde eu tenho que ir e registrar um livro (alocar memória) e depois devolvê-lo manualmente (desalocar memória).
 É mais flexível, porque eu posso pegar e devolver livros quando quiser, mas é responsabilidade minha lembrar de devolver.
+
+## ex01
+É preciso criar uma horda de zumbis
+
+## Implementar a Função zombieHorde:
+- Esta função deve alocar N objetos Zombie em uma única alocação.
+- Cada zumbi deve ser inicializado com o nome passado como parâmetro.
+- A função retorna um ponteiro para o primeiro zumbi alocado.
+  
+### Testes:
+- Implementar testes que provem que a função zombieHorde funciona como esperado. Isso envolve usar a função e, em seguida, iterar pela horda alocada para chamar o método announce de cada zumbi e liberar a memória alocada ao final dos testes para evitar vazamento de memória.
