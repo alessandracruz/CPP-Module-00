@@ -102,6 +102,51 @@ int main() {
 O objetivo deste exercício é desmistificar referências que podem
 parecer completamente novas. Embora existam algumas pequenas diferenças, essa é outra sintaxe para algo que já estamos acostumados a fazer: manipulação de endereços. Este exercício é focado em referências e ponteiros, assim como na impressão de endereços de memória e valores associados.
 
+```
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string str = "HI THIS IS BRAIN";
+    std::string* stringPTR = &str;
+    std::string& stringREF = str;
+
+    // Imprime os endereços
+    std::cout << &str << std::endl;
+    std::cout << stringPTR << std::endl;
+    std::cout << &stringREF << std::endl;
+
+    // Imprime os valores
+    std::cout << str << std::endl;
+    std::cout << *stringPTR << std::endl;
+    std::cout << stringREF << std::endl;
+
+    return 0;
+}
+```
+### Retorno do terminal ao dar "make":
+
+0x7ffd4b40bc20\
+0x7ffd4b40bc20\
+0x7ffd4b40bc20\
+HI THIS IS BRAIN\
+HI THIS IS BRAIN\
+HI THIS IS BRAIN
+
+### Entendendo o retorno linha a lina:
+
+1. 0x7ffd4b40bc20: Este é o endereço de memória da variável str. Quando uso o operador "&" com uma variável, ele fornece o endereço de memória onde essa variável está armazenada.
+2. 0x7ffd4b40bc20: Este é o endereço de memória armazenado no ponteiro stringPTR. Como o ponteiro está apontando para str, o endereço é o mesmo que o da variável str.
+3. 0x7ffd4b40bc20: Este é o endereço de memória associado à referência stringREF. Em C++, uma referência é basicamente um outro nome para a mesma variável, então ela compartilha o mesmo endereço de memória.
+   
+As três primeiras linhas mostram que tanto a variável original quanto o ponteiro e a referência têm o mesmo endereço de memória, o que significa que todos eles estão referenciando o mesmo conteúdo na memória.
+
+4. HI THIS IS BRAIN: Esta é a string armazenada na variável str. Estou acessando diretamente o valor da variável.
+5. HI THIS IS BRAIN: Esta é a string para a qual o ponteiro stringPTR está apontando. Usando o operador de derreferenciação "*", estou acessando o valor na memória apontada pelo ponteiro, que é a mesma string str.
+6. HI THIS IS BRAIN: Este é o valor referenciado por stringREF. Como mencionado anteriormente, a referência é apenas um outro nome para a mesma variável, então ela também tem o mesmo valor que str.
+
+Essencialmente, todas as três abordagens - acesso direto, através de um ponteiro ou através de uma referência - levam ao mesmo local na memória e, portanto, fornecem o mesmo valor. Isso demonstra a equivalência entre usar a própria variável, um ponteiro para ela e uma referência a ela em C++.
+
 - Criar uma variável do tipo std::string com o conteúdo "HI THIS IS BRAIN".
 - Criar um ponteiro stringPTR para essa string.
 - Criar uma referência stringREF para essa string.
