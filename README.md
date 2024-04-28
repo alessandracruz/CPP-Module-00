@@ -188,3 +188,10 @@ int main() {
 - mailboxPTR é o endereço da caixa de correios, ou seja, onde encontrar a mensagem.
 - mailRef é como uma pessoa que tem acesso direto para ler a mensagem sem precisar do endereço.
 
+## ex03
+O objetivo desse exercício é lidar com classes que envolvem manipulação de armas e ataques por personagens fictícios, HumanA e HumanB. Ainda é sobre ponteiro, conteúdo e referência do mesmo.
+
+- Implementar uma classe Weapon que contém um tipo de arma como um atributo privado e métodos para obter e definir esse tipo.
+- Criar duas classes, HumanA e HumanB, que representam personagens que usam armas para atacar. A diferença chave entre essas duas classes é como elas associam suas armas:
+HumanA tem uma arma desde sua criação, que é passada por referência no construtor.
+HumanB pode ou não ter uma arma inicialmente e sua arma pode ser definida depois de ser criado, usando um ponteiro.
