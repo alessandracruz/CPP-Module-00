@@ -6,7 +6,7 @@
 /*   By: acastilh <acastilh@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:28:23 by acastilh          #+#    #+#             */
-/*   Updated: 2024/04/25 21:03:51 by acastilh         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:15:42 by acastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ bool getInput(std::string &input, const std::string &prompt, const std::string &
 std::string toUpperCase(const std::string &str);
 bool getValidCommand(std::string &command);
 
-#endif // UTILS_HPP
+#endif
 
 

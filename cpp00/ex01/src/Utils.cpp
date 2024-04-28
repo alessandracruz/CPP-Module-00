@@ -6,7 +6,7 @@
 /*   By: acastilh <acastilh@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:31:29 by acastilh          #+#    #+#             */
-/*   Updated: 2024/04/27 17:43:35 by acastilh         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:31:04 by acastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,22 @@ bool validateName(const std::string &input) {
 bool getInput(std::string &input, const std::string &prompt, const std::string &type) {
     std::cout << prompt;
     while (true) {
-        std::getline(std::cin, input);  // Lê a entrada
+        std::getline(std::cin, input);  
         if (std::cin.eof() || std::cin.fail()) {
-            std::cin.clear();  // Limpa os flags de erro
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Ignora o restante da linha
+            std::cin.clear();  
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  
             return false;
         }
-        if (!input.empty()) {  // Se a entrada não estiver vazia, verifica seu conteúdo
+        if (!input.empty()) {  
             if (type == "name" && !validateName(input)) {
                 std::cout << "Invalid input: name contains invalid characters.\n";
             } else if (type == "phone" && !validatePhoneNumber(input)) {
                 std::cout << "Invalid input: phone number must be numeric.\n";
             } else {
-                return true;  // Validação bem-sucedida
+                return true;  
             }
         }
-        std::cout << "Invalid input: field cannot be empty.\n" << prompt;  // Solicita novamente no caso de entrada vazia
+        std::cout << "Invalid input: field cannot be empty.\n" << prompt;  
     }
 }
 

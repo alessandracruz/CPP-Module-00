@@ -6,7 +6,7 @@
 /*   By: acastilh <acastilh@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:24:55 by acastilh          #+#    #+#             */
-/*   Updated: 2024/04/25 21:25:03 by acastilh         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:15:18 by acastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Contact
 	std::string darkest_secret;
 
   public:
-	Contact(); // Construtor
+	Contact();
 	void set_details(const std::string &fn, const std::string &ln,
 		const std::string &nn, const std::string &pn, const std::string &ds);
 	std::string get_first_name() const;
@@ -40,4 +40,4 @@ class Contact
     void set_darkest_secret(const std::string &ds);
 };
 
-#endif // CONTACT_HPP
+#endif

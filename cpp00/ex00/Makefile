@@ -6,13 +6,13 @@
 #    By: acastilh <acastilh@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 20:27:48 by acastilh          #+#    #+#              #
-#    Updated: 2024/04/20 20:27:54 by acastilh         ###   ########.fr        #
+#    Updated: 2024/04/27 20:35:58 by acastilh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 
-CC = g++
+CC = c++
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 RM = rm -rf
 

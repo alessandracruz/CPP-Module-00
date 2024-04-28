@@ -6,7 +6,7 @@
 /*   By: acastilh <acastilh@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 20:54:44 by acastilh          #+#    #+#             */
-/*   Updated: 2024/04/27 18:08:16 by acastilh         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:29:15 by acastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 #include <iomanip>
 #include <iostream>
 
+PhoneBook::PhoneBook() : current_index(0), contact_count(0) {}
+
 void PhoneBook::add_contact(const Contact& contact) {
     if (contact_count < 8) {
         contacts[current_index] = contact;
         contact_count++;
     } else {
-        contacts[current_index] = contact;  // Substitui o contato mais antigo
+        contacts[current_index] = contact;  
     }
-    current_index = (current_index + 1) % 8;  // Atualiza o índice circularmente
+    current_index = (current_index + 1) % 8;  
 }
 
-void PhoneBook::display_contacts() const
-{
+void PhoneBook::display_contacts() const {
 	std::cout << std::setw(10) << "Index"
 				<< "|" << std::setw(10) << "First Name"
 				<< "|" << std::setw(10) << "Last Name"
@@ -44,8 +45,7 @@ void PhoneBook::display_contacts() const
     }
 }
 
-void PhoneBook::display_contact_details(int index) const
-{
+void PhoneBook::display_contact_details(int index) const {
 	if (index < 0 || index >= contact_count)
 	{
 		std::cout << "Invalid index." << std::endl;
@@ -59,13 +59,11 @@ void PhoneBook::display_contact_details(int index) const
 	std::cout << "Darkest Secret: " << contact.get_darkest_secret() << std::endl;
 }
 
-int PhoneBook::get_contact_count() const
-{
+int PhoneBook::get_contact_count() const {
     return contact_count;
 }
 
-std::string PhoneBook::truncate(const std::string &str, size_t width) const
-{
+std::string PhoneBook::truncate(const std::string &str, size_t width) const {
 	if (str.length() > width)
 	{
 		return (str.substr(0, width - 1) + ".");
