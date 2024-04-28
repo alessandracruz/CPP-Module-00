@@ -55,3 +55,46 @@ O heap é como uma biblioteca enorme, onde eu tenho que ir e registrar um livro 
   
 ### Testes:
 - Implementar testes que provem que a função zombieHorde funciona como esperado. Isso envolve usar a função e, em seguida, iterar pela horda alocada para chamar o método announce de cada zumbi e liberar a memória alocada ao final dos testes para evitar vazamento de memória.
+
+### Imagine uma caixa de brinquedos
+Para tornar mais palatável a alocação e desalocação de memória em C++, vou imaginar que estou gerenciando uma pequena caixa de brinquedos.
+
+### Criar a caixa: 
+- Criar uma caixa que pode conter um certo número de brinquedos. Em termos de programação, isso seria como alocar um array na heap para guardar esses brinquedos (objetos).
+### Preencher a caixa:
+- Colocar brinquedos (inicializar objetos) na caixa, um por um, até que a caixa esteja cheia.
+### Brincar com os brinquedos:
+- Usar os brinquedos, o que em C++ seria como acessar e utilizar os objetos no array.
+### Arrumar a caixa:
+- Depois de brincar, vou limpar, o que significa desalocar a memória que reservada para a caixa de brinquedos, para que eu possa ter espaço para brincar com outras coisas.
+```
+#include <iostream>
+
+class Toy {
+public:
+    void playWith() const {
+        std::cout << "Playing with the toy!" << std::endl;
+    }
+};
+
+int main() {
+    int numberOfToys = 3; // Número de brinquedos que quero na caixa.
+    
+    // Passo 1: Criar a caixa (alocar memória).
+    Toy* toyBox = new Toy[numberOfToys];
+    
+    // Passo 2: Preencher a caixa (Inicializar os objetos).
+    // Não precisa fazer nada neste passo porque a classe Toy é simples.
+    
+    // Passo 3: Brincar com os brinquedos (Usar os objetos).
+    int i = 0; 
+    while (i < numberOfToys) {
+        toyBox[i].playWith();
+        i++; 
+    }
+    
+    // Passo 4: Arrumar a caixa (desalocar memória).
+    delete[] toyBox;
+    return 0;
+}
+```
