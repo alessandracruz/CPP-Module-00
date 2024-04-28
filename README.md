@@ -46,7 +46,7 @@ O heap é como uma biblioteca enorme, onde eu tenho que ir e registrar um livro 
 É mais flexível, porque eu posso pegar e devolver livros quando quiser, mas é responsabilidade minha lembrar de devolver.
 
 ## ex01
-É preciso criar uma horda de zumbis
+É preciso criar uma horda de zumbis.
 
 ## Implementar a Função zombieHorde:
 - Esta função deve alocar N objetos Zombie em uma única alocação.
@@ -98,3 +98,12 @@ int main() {
     return 0;
 }
 ```
+## ex02
+O objetivo deste exercício é desmistificar referências que podem
+parecer completamente novas. Embora existam algumas pequenas diferenças, essa é outra sintaxe para algo que já estamos acostumados a fazer: manipulação de endereços. Este exercício é focado em referências e ponteiros, assim como na impressão de endereços de memória e valores associados.
+
+- Criar uma variável do tipo std::string com o conteúdo "HI THIS IS BRAIN".
+- Criar um ponteiro stringPTR para essa string.
+- Criar uma referência stringREF para essa string.
+- Imprimir o endereço da memória da string usando a variável, o ponteiro e a referência.
+- Imprimir o valor da string usando a variável, o ponteiro e a referência.
