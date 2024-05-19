@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: acastilh <acastilh@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/22 18:54:04 by acastilh          #+#    #+#              #
-#    Updated: 2024/05/18 19:45:53 by acastilh         ###   ########.fr        #
+#    Created: 2024/04/28 13:22:50 by acastilh          #+#    #+#              #
+#    Updated: 2024/05/18 18:31:05 by acastilh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = harl
 
 CC = c++
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98 -Iincludes
@@ -28,7 +28,7 @@ $(NAME):
 	$(CC) $(CPPFLAGS) $(SRCS) -o $(NAME)
 
 fclean:
-	rm -rf $(NAME)
+	@rm -rf $(NAME) 
 
 re: fclean all
 

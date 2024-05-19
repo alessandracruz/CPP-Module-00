@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acastilh <acastilh@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/01 21:01:17 by acastilh          #+#    #+#             */
-/*   Updated: 2024/05/01 21:49:51 by acastilh         ###   ########.fr       */
+/*   Created: 2024/05/18 18:02:16 by acastilh          #+#    #+#             */
+/*   Updated: 2024/05/18 18:02:18 by acastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-#define UTILS_HPP
+#include "Harl.hpp"
 
-#include <string>
-#include <fstream>
+int main(void)
+{
+    Harl annoying;
 
-bool areArgsValid(int argc, char* argv[]);
-bool isFileEmpty(std::ifstream& inFile);
-
-#endif // UTILS_HPP
+    annoying.complain("DEBUG");
+    annoying.complain("INFO");
+    annoying.complain("WARNING");
+    annoying.complain("ERROR");
+    return 0;
+}

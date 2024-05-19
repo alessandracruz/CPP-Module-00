@@ -67,7 +67,7 @@ Para tornar mais palatável a alocação e desalocação de memória em C++, vou
 - Usar os brinquedos, o que em C++ seria como acessar e utilizar os objetos no array.
 ### Arrumar a caixa:
 - Depois de brincar, vou limpar, o que significa desalocar a memória que reservada para a caixa de brinquedos, para que eu possa ter espaço para brincar com outras coisas.
-```
+```cpp
 #include <iostream>
 
 class Toy {
@@ -102,7 +102,7 @@ int main() {
 O objetivo deste exercício é desmistificar referências que podem
 parecer completamente novas. Embora existam algumas pequenas diferenças, essa é outra sintaxe para algo que já estamos acostumados a fazer: manipulação de endereços. Este exercício é focado em referências e ponteiros, assim como na impressão de endereços de memória e valores associados.
 
-```
+```cpp
 #include <iostream>
 #include <string>
 
@@ -164,7 +164,7 @@ Dentro da caixa de correios, tem uma carta. Essa carta contém uma mensagem, "Vo
 3. Referência à Carta:
 Se alguém (vou chamar essa pessoa de "Referência") tem permissão direta para abrir a caixa de correios e ler a carta sempre que quiser, essa pessoa é como uma referência em C++. A referência (stringREF) não precisa do endereço porque já tem acesso direto ao conteúdo da carta. Quando ela lê a carta, está acessando diretamente o mesmo conteúdo que o ponteiro aponta.
 
-```
+```cpp
 #include <iostream>
 #include <string>
 
