@@ -250,3 +250,186 @@ Nessa empresa, eu ofereço dois tipos de serviços aos meus clientes:
 - HumanA (Bob): Bob reservou o serviço de aluguel garantido. Quando ele chega, um carro já está esperando por ele, e ele não pode trocar de carro durante o período de aluguel. Se o carro que ele alugou recebe um upgrade (suponha, um melhor sistema de som), ele se beneficia imediatamente dessas melhorias.
 
 - HumanB (Jim): Jim escolheu o serviço flexível. Ele pode chegar e decidir não pegar nenhum carro, ou ele pode escolher um carro na hora. Se ele decidir mudar para um carro melhor a qualquer momento, ele pode fazer isso. No início, ele pode não ter nenhum carro, mas mais tarde decide pegar um.
+
+## ex04
+O objetivo deste exercício é criar um programa que substitua todas as ocorrências de uma string em um arquivo por outra string, escrevendo o resultado em um novo arquivo.
+
+Requisitos:
+
+- Implementar um programa que recebe como argumentos o nome de um arquivo, uma string a ser substituída e a string de substituição.
+- O programa deve ler o conteúdo do arquivo de entrada, substituir todas as ocorrências da string fornecida e gravar o resultado em um novo arquivo cujo nome é o nome do arquivo de entrada acrescido de ".replace".
+
+## Imaginei que eu sou um Editor de Textos:
+
+- Tarefa: Você tem um artigo escrito e seu chefe pediu para substituir todas as ocorrências da palavra "antigo" por "novo".
+- O Programa: O programa replace faz exatamente isso de forma automatizada. Ele lê o artigo (arquivo de entrada), encontra todas as ocorrências da palavra "antigo" e substitui por "novo", criando um novo artigo (arquivo de saída) com as modificações.
+
+### Aplicação Prática na Analogia:
+
+- Leitura do Arquivo: O programa abre o arquivo de entrada e lê todo o seu conteúdo.
+- Substituição de Strings: Ele procura todas as ocorrências da string alvo e as substitui pela string fornecida.
+- Escrita do Novo Arquivo: O programa grava o conteúdo modificado em um novo arquivo com o nome do arquivo original acrescido de ".replace".
+
+## ex05
+O objetivo deste exercício é lidar com classes que representam um cérebro humano e um cérebro alienígena, explorando conceitos de agregação e composição em C++.
+
+Requisitos:
+
+- Implementar uma classe Human que possui um objeto da classe Brain como um membro.
+- Implementar uma classe Alien que possui um objeto da classe Brain como um ponteiro.
+
+```cpp
+int main() {
+    Human human;
+    Alien alien;
+    std::cout << "Human brain address: " << human.identify() << std::endl;
+    std::cout << "Alien brain address: " << alien.identify() << std::endl;
+    return 0;
+}
+```
+## Imaginei ser um Gerente de um Hospital
+
+- Human: Um humano tem um cérebro que faz parte inseparável do seu corpo. O cérebro do humano está sempre presente e você pode acessá-lo diretamente.
+    - Analogia com Composição: A classe Human contém um objeto Brain como um membro. Isso significa que o cérebro é criado e destruído junto com o humano.
+
+- Alien: Um alienígena, por outro lado, pode ter um cérebro que pode ser conectado ou desconectado. O cérebro pode ser substituído ou removido conforme necessário.
+    - Analogia com Agregação: A classe Alien contém um ponteiro para um objeto Brain. Isso permite mais flexibilidade, pois o cérebro pode ser alterado ou removido.
+
+### Aplicação Prática na Analogia:
+
+1. Classe Brain: Implementar uma classe Brain com métodos para identificar o cérebro.
+2. Classe Human: Implementar uma classe Human que contém um objeto Brain como um membro.
+3. Classe Alien: Implementar uma classe Alien que contém um ponteiro para um objeto Brain.
+
+- Human: Sempre tem um cérebro associado que não pode ser separado. Se um humano for destruído, seu cérebro também é.
+- Alien: Pode ter um cérebro que pode ser conectado ou desconectado. O cérebro pode ser substituído ou removido sem destruir o alienígena.
+
+## CPP02
+### ex00
+O objetivo deste exercício é criar uma classe em C++ chamada Fixed que representa um número de ponto fixo com uma precisão específica.
+
+Requisitos:
+
+- Implementar uma classe Fixed que contém um inteiro para armazenar o valor de ponto fixo e um inteiro estático constante para representar a quantidade de bits fracionários.
+- Implementar construtores, destrutor, operador de atribuição, e métodos getRawBits e setRawBits.
+
+Exemplo de uso:
+
+```cpp
+int main() {
+    Fixed a;
+    Fixed b(a);
+    Fixed c;
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
+    return 0;
+}
+```
+## Imaginei ser um Contador:
+
+- Número de Ponto Fixo: Pense no número de ponto fixo como um valor monetário com centavos. Por exemplo, R$10.50 pode ser representado como 1050 centavos.
+    - Representação Interna: Em vez de usar um ponto decimal, você armazena tudo em centavos para manter a precisão. O valor "1050" representa R$10.50.
+
+#### Passo a Passo da Implementação:
+
+1. Classe Fixed: Implementar uma classe Fixed que contém um inteiro para armazenar o valor de ponto fixo e um inteiro estático constante para representar os bits fracionários.
+2. Métodos getRawBits e setRawBits: Implementar métodos para obter e definir o valor bruto do ponto fixo.
+
+#### Aplicação Prática na Analogia:
+- Número de Ponto Fixo: Assim como armazenar valores monetários em centavos mantém a precisão sem usar um ponto decimal, a classe Fixed armazena valores de ponto fixo usando um inteiro, mantendo a precisão especificada pelos bits fracionários.
+
+### ex01
+O objetivo deste exercício é estender a classe Fixed para suportar conversões entre inteiros e números de ponto flutuante.
+
+Requisitos:
+
+- Adicionar construtores para converter de um inteiro e um número de ponto flutuante para Fixed.
+- Implementar métodos toInt e toFloat para converter de Fixed para inteiro e ponto flutuante, respectivamente.
+
+Exemplo de uso:
+
+```cpp
+int main() {
+    Fixed a(10);
+    Fixed b(42.42f);
+    std::cout << a.toInt() << " as integer" << std::endl;
+    std::cout << b.toFloat() << " as float" << std::endl;
+    return 0;
+}
+```
+## Imaginei ser um caixa:
+
+- Conversão de Moedas: Pense em converter entre diferentes moedas, como dólares e centavos. $10.50 pode ser convertido para 1050 centavos e vice-versa.
+    - Conversão de Tipos: A classe Fixed pode converter entre valores inteiros e de ponto flutuante, assim como você converte entre dólares e centavos.
+
+#### Aplicação Prática na Analogia:
+- Conversão de Moedas: Assim como você converte entre dólares e centavos para facilitar diferentes operações financeiras, a classe Fixed permite a conversão entre valores inteiros e de ponto flutuante para facilitar diferentes operações numéricas.
+
+### ex02
+O objetivo deste exercício é estender a classe Fixed para suportar operadores de comparação e aritméticos.
+
+Requisitos:
+
+- Implementar operadores de comparação (<, >, <=, >=, ==, !=).
+- Implementar operadores aritméticos (+, -, *, /).
+- Implementar operadores de incremento e decremento (pré e pós-incremento e decremento).
+
+Exemplo de uso:
+
+```cpp
+int main() {
+    Fixed a(2);
+    Fixed b(3.14f);
+    Fixed c = a + b;
+    std::cout << c.toFloat() << std::endl;
+    return 0;
+}
+```
+## Imaginei ser um Matemático:
+
+- Operações Matemáticas: Pense em realizar operações matemáticas básicas como adição, subtração, multiplicação e divisão com valores monetários.
+    - Operadores de Comparação e Aritméticos: A classe Fixed permite realizar operações matemáticas básicas e comparações, assim como você faria com valores monetários.
+
+Passo a Passo da Implementação:
+
+1. Operadores de Comparação: Implementar operadores de comparação (<, >, <=, >=, ==, !=).
+2. Operadores Aritméticos: Implementar operadores aritméticos (+, -, *, /).
+3. Operadores de Incremento e Decremento: Implementar operadores de incremento e decremento (pré e pós-incremento e decremento).
+
+#### Aplicação Prática na Analogia:
+- Operações Matemáticas: Assim como você realiza operações matemáticas básicas com valores monetários, a classe Fixed permite realizar essas operações com valores de ponto fixo, mantendo a precisão especificada.
+
+### ex03
+O objetivo deste exercício é estender a classe Fixed para suportar funções estáticas min e max.
+
+Requisitos:
+
+- Implementar funções estáticas min e max que retornam o menor e o maior valor, respectivamente, entre dois objetos Fixed.
+
+Exemplo de uso:
+
+```cpp
+int main() {
+    Fixed a(2);
+    Fixed b(3.14f);
+    std::cout << Fixed::min(a, b).toFloat() << std::endl;
+    std::cout << Fixed::max(a, b).toFloat() << std::endl;
+    return 0;
+}
+```
+
+## Imaginei ser um Juiz de Competições:
+
+- Comparação de Pontuações: Pense em comparar as pontuações de dois competidores para determinar o vencedor.
+    - Funções min e max: As funções min e max permitem determinar o menor e o maior valor entre dois objetos Fixed, assim como você determina o vencedor comparando as pontuações dos competidores.
+
+Passo a Passo da Implementação:
+
+1. Funções min e max: Implementar funções estáticas min e max que retornam o menor e o maior valor entre dois objetos Fixed.
+
+#### Aplicação Prática na Analogia:
+- Comparação de Pontuações: Assim como você compara as pontuações dos competidores para determinar o vencedor, as funções min e max permitem comparar os valores de ponto fixo para determinar o menor e o maior.
+
+
