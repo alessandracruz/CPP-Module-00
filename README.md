@@ -976,7 +976,7 @@ Imagine que você tem um robô de brinquedo chamado "Robô". Esse robô precisa 
 
 ### Desenhando:
 
-![Forma Canônica Ortodoxa](https://github.com/alessandracruz/Imagens/blob/main/Forma_Canônica_Ortodoxa.png)
+![Forma Canônica Ortodoxa.png](https://github.com/alessandracruz/Imagens/blob/8ff7ef14da3f7f77a16085742d8d092982f98682/Forma%20Can%C3%B4nica%20Ortodoxa.png)
 
 #### 2. Ponto Fixo
 
