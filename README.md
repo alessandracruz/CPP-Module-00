@@ -738,29 +738,29 @@ A programação orientada a objetos (POO) é um paradigma de programação que u
 
 Encapsulamento é o conceito de agrupar dados (atributos) e métodos que operam sobre esses dados dentro de uma classe, escondendo a implementação dos detalhes e expondo apenas o que é necessário através de interfaces públicas.
 
-    - Atributo: Variável que pertence a uma classe e descreve uma característica de um objeto. Exemplo: std::string name em uma classe ClapTrap.
-    - Membro Privado: Atributo ou método que só pode ser acessado de dentro da própria classe. Exemplo: int hitPoints em ClapTrap.
-    - Membro Protegido: Atributo ou método que pode ser acessado de dentro da própria classe e por classes derivadas. Exemplo: std::string type em Animal.
+- Atributo: Variável que pertence a uma classe e descreve uma característica de um objeto. Exemplo: std::string name em uma classe ClapTrap.
+- Membro Privado: Atributo ou método que só pode ser acessado de dentro da própria classe. Exemplo: int hitPoints em ClapTrap.
+- Membro Protegido: Atributo ou método que pode ser acessado de dentro da própria classe e por classes derivadas. Exemplo: std::string type em Animal.
 
 2. Abstração
 
 Abstração é o conceito de simplificar a complexidade do mundo real ao modelar classes apropriadas que representam objetos do mundo real. Foca em aspectos relevantes para o problema, ignorando detalhes irrelevantes.
 
-    - Classe Base Abstrata: Uma classe que não pode ser instanciada diretamente e serve como uma base para outras classes. Ela geralmente contém métodos virtuais puros. Exemplo: class Animal { virtual void makeSound() const = 0; }.
+- Classe Base Abstrata: Uma classe que não pode ser instanciada diretamente e serve como uma base para outras classes. Ela geralmente contém métodos virtuais puros. Exemplo: class Animal { virtual void makeSound() const = 0; }.
 
 3. Herança
 
 Herança é o mecanismo pelo qual uma classe (classe derivada) herda atributos e métodos de outra classe (classe base). Isso promove a reutilização de código e a criação de hierarquias de classes.
 
-    - Classe Derivada: Uma classe que herda de outra classe. Exemplo: class Dog : public Animal { }.
-    - Sobrecarga de Operadores: Capacidade de redefinir o comportamento de operadores para tipos definidos pelo usuário. Exemplo: Fixed operator+(const Fixed& other) const.
+- Classe Derivada: Uma classe que herda de outra classe. Exemplo: class Dog : public Animal { }.
+- Sobrecarga de Operadores: Capacidade de redefinir o comportamento de operadores para tipos definidos pelo usuário. Exemplo: Fixed operator+(const Fixed& other) const.
 
 4. Polimorfismo
 
 Polimorfismo é a capacidade de um objeto ser tratado como instância de diferentes classes, geralmente através de uma interface comum. Isso permite o uso de funções e métodos de forma flexível e extensível.
 
-    - Método Virtual Puro: Um método que deve ser implementado por qualquer classe derivada. Exemplo: virtual void makeSound() const = 0.
-    - Polimorfismo Correto e Incorreto: Utilizar a herança e interfaces de forma que permita o comportamento adequado dos objetos, evitando o uso de classes e métodos que não correspondam às expectativas.
+- Método Virtual Puro: Um método que deve ser implementado por qualquer classe derivada. Exemplo: virtual void makeSound() const = 0.
+- Polimorfismo Correto e Incorreto: Utilizar a herança e interfaces de forma que permita o comportamento adequado dos objetos, evitando o uso de classes e métodos que não correspondam às expectativas.
 
 ## Conceitos Adicionais
 
@@ -776,8 +776,8 @@ Ponto Fixo é um método de representar números reais em computadores utilizand
 
 ### Subclasses e Cópias Rasas
 
-    - Subclasses: Classes que herdam de uma classe base, adicionando ou modificando comportamentos. Exemplo: Cat e Dog são subclasses de Animal.
-    - Cópias Rasas: Cópias de objetos onde apenas os valores dos atributos são copiados. Para evitar problemas de duplicação de recursos, frequentemente se implementa uma cópia profunda, especialmente quando a classe contém ponteiros ou alocações dinâmicas.
+- Subclasses: Classes que herdam de uma classe base, adicionando ou modificando comportamentos. Exemplo: Cat e Dog são subclasses de Animal.
+- Cópias Rasas: Cópias de objetos onde apenas os valores dos atributos são copiados. Para evitar problemas de duplicação de recursos, frequentemente se implementa uma cópia profunda, especialmente quando a classe contém ponteiros ou alocações dinâmicas.
 
 ## Exemplo de Uso dos Conceitos
 
@@ -940,19 +940,19 @@ Polimorfismo é como diferentes animais podem fazer a mesma ação de maneiras d
 
 ### Explicando os Conceitos:
 
-    1. Encapsulamento: Imagine que o animal guarda suas características e ações dentro de uma caixa, onde só algumas coisas podem ser vistas de fora.
+1. Encapsulamento: Imagine que o animal guarda suas características e ações dentro de uma caixa, onde só algumas coisas podem ser vistas de fora.
 
-    2. Abstração: Como desenhar um esqueleto, onde só os ossos principais são mostrados e os detalhes são adicionados depois.
+2. Abstração: Como desenhar um esqueleto, onde só os ossos principais são mostrados e os detalhes são adicionados depois.
 
-    3. Herança: Características são passadas dos pais para os filhos. Um gato filhote herda características do gato adulto.
+3. Herança: Características são passadas dos pais para os filhos. Um gato filhote herda características do gato adulto.
 
-    4. Polimorfismo: Diferentes animais fazem a mesma coisa de formas diferentes. Cachorros latem, gatos miam, mas todos fazem som.
+4. Polimorfismo: Diferentes animais fazem a mesma coisa de formas diferentes. Cachorros latem, gatos miam, mas todos fazem som.
 
 ### Desenhando:
 
 ### Mais explicações sobre:
 
-#### Forma Canônica Ortodoxa
+#### 1. Forma Canônica Ortodoxa
 
 Imagine que você tem um robô de brinquedo chamado "Robô". Esse robô precisa seguir algumas regras importantes para funcionar bem em todas as situações, como ser copiado, substituído e guardado corretamente.
 
@@ -970,12 +970,12 @@ Imagine que você tem um robô de brinquedo chamado "Robô". Esse robô precisa 
 
 ### Desenhando:
 
-#### Ponto Fixo
+#### 2. Ponto Fixo
 
 Imagine que você tem um cofre especial que ajuda a contar moedas de maneira precisa. Esse cofre tem duas partes:
 
-    - Uma parte para contar a quantidade inteira de moedas.
-    - Outra parte para contar as partes fracionárias das moedas (centavos).
+- Uma parte para contar a quantidade inteira de moedas.
+- Outra parte para contar as partes fracionárias das moedas (centavos).
 
 Divisões do Cofre:
 
