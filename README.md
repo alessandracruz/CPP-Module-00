@@ -834,7 +834,11 @@ int main() {
 
 Os exercícios das listas cpp00 a cpp04 cobrem conceitos de programação orientada a objetos, desde a criação e manipulação de objetos simples até o uso avançado de herança, polimorfismo e encapsulamento. Através desses exercícios é possível aprender a estruturar seu código de forma modular e reutilizável, além de aplicar práticas recomendadas para a implementação de classes em C++.
 
-### Simplificando:
+### Desenhando:
+
+![POO](https://github.com/alessandracruz/Imagens/blob/main/POO.png)
+
+### Simplificando para o contexto do nosso dia a dia:
 
 #### Encapsulamento
 
@@ -950,6 +954,8 @@ Polimorfismo é como diferentes animais podem fazer a mesma ação de maneiras d
 
 ### Desenhando:
 
+![POO](https://github.com/alessandracruz/Imagens/blob/main/POO_01.png)
+
 ### Mais explicações sobre:
 
 #### 1. Forma Canônica Ortodoxa
@@ -969,6 +975,8 @@ Imagine que você tem um robô de brinquedo chamado "Robô". Esse robô precisa 
     Quando você termina de brincar com o Robô, você precisa guardá-lo direitinho na caixa. Isso significa que você desliga todas as partes e guarda cada uma no lugar certo para não estragar.
 
 ### Desenhando:
+
+![Forma Canônica Ortodoxa](https://github.com/alessandracruz/Imagens/blob/main/Forma_Canônica_Ortodoxa.png)
 
 #### 2. Ponto Fixo
 
@@ -1020,6 +1028,7 @@ int main() {
 
 ### Desenhando:
 
+![Ponto Fixo](https://github.com/alessandracruz/Imagens/blob/main/Ponto_Fixo.png)
 
 ### Ainda sobre Ponto Fixo e Operações Bit a Bit:
 
