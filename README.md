@@ -306,7 +306,7 @@ int main() {
 
 ## CPP02
 ### ex00 - Minha Primeira Classe na Forma Canônica Ortodoxa
-O objetivo deste exercício é criar uma classe em C++ chamada Fixed que representa um número de ponto fixo com uma precisão específica.
+O objetivo deste exercício é criar uma classe em C++ chamada Fixed que representa um número de ponto fixo com uma precisão específica. Ponto Fixo é um método de representar números reais em computadores utilizando uma quantidade fixa de bits para a parte fracionária. Em C++, isso é frequentemente implementado através de classes que encapsulam a lógica de manipulação de números de ponto fixo.
 
 Requisitos:
 
@@ -1020,3 +1020,97 @@ int main() {
 
 ### Desenhando:
 
+
+### Ainda sobre Ponto Fixo e Operações Bit a Bit:
+
+Em um número de ponto fixo, representamos os números inteiros e fracionários usando uma quantidade fixa de bits para cada parte. Neste exemplo, vamos usar um total de 16 bits: 8 bits para a parte inteira e 8 bits para a parte fracionária.
+
+- Representação de 5.75 em Ponto Fixo
+  Parte Inteira: 5 em binário é 00000101.
+  Parte Fracionária: 0.75 em binário é 0.11. Para representar isso com 8 bits, movemos o ponto para a direita e obtemos 11000000.
+
+- Combinação:
+
+  Parte Inteira (8 bits): 00000101
+  Parte Fracionária (8 bits): 11000000
+  Portanto, 5.75 em ponto fixo é 0000010111000000.
+
+- Implementação em C++
+  Para implementar isso, usamos operações bit a bit para manipular os bits diretamente.
+
+- Classe Ponto Fixo:
+
+```cpp
+#include <iostream>
+
+class Fixed {
+private:
+    int fixedPointValue;
+    static const int fractionalBits = 8;
+
+public:
+    // Construtor padrão
+    Fixed() : fixedPointValue(0) { }
+
+    // Construtor para int e float
+    Fixed(int intValue) : fixedPointValue(intValue << fractionalBits) { }
+    Fixed(float floatValue) : fixedPointValue(static_cast<int>(floatValue * (1 << fractionalBits))) { }
+
+    // Método para converter para float
+    float toFloat() const {
+        return static_cast<float>(fixedPointValue) / (1 << fractionalBits);
+    }
+
+    // Método para converter para int
+    int toInt() const {
+        return fixedPointValue >> fractionalBits;
+    }
+
+    // Sobrecarga do operador de inserção para impressão
+    friend std::ostream& operator<<(std::ostream& os, const Fixed& fixed) {
+        os << fixed.toFloat();
+        return os;
+    }
+};
+
+int main() {
+    Fixed a(5.75f); // Criar número de ponto fixo representando 5.75
+    std::cout << "Valor em ponto fixo: " << a << std::endl;
+    std::cout << "Parte inteira: " << a.toInt() << std::endl;
+    std::cout << "Valor original (float): " << a.toFloat() << std::endl;
+    return 0;
+}
+```
+
+### Explicação das Operações Bit a Bit
+
+1. Construção a partir de int: Fixed(int intValue) : fixedPointValue(intValue << fractionalBits) { }
+
+  - Desloca os bits do valor inteiro para a esquerda, multiplicando-o por 2^8 (256). Isso coloca os bits inteiros na parte correta do número de ponto fixo.
+
+2. Construção a partir de float: Fixed(float floatValue) : fixedPointValue(static_cast<int>(floatValue * (1 << fractionalBits))) { }
+
+  - Multiplica o valor float por 2^8 (256) e converte para int, posicionando os bits fracionários corretamente.
+
+3. Conversão para float: float toFloat() const { return static_cast<float>(fixedPointValue) / (1 << fractionalBits); }
+
+  - Divide o valor de ponto fixo por 2^8 (256) para obter o valor float original.
+
+4. Conversão para int: int toInt() const { return fixedPointValue >> fractionalBits; }
+
+  - Desloca os bits do valor de ponto fixo para a direita, dividindo-o por 2^8 (256) para obter o valor inteiro original.
+
+### Operações Bit a Bit
+
+- Representação de 5.75 em Binário:
+  - Parte Inteira (5): 00000101
+  - Parte Fracionária (0.75): 11000000
+
+- Combinação:
+  - 5.75 em ponto fixo (16 bits): 0000010111000000
+
+- Deslocamento de Bits
+  - 5 << 8 = 00000101 se torna 0000010100000000
+  - 0.75 * 256 = 192 em binário é 11000000
+  
+- Portanto, 5.75 representado em ponto fixo é 0000010111000000.
