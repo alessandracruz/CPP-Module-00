@@ -1028,7 +1028,7 @@ int main() {
 
 ### Desenhando:
 
-![Ponto Fixo](https://github.com/alessandracruz/Imagens/blob/main/Ponto_Fixo.png)
+![Ponto Fixo](https://github.com/alessandracruz/Imagens/blob/8ff7ef14da3f7f77a16085742d8d092982f98682/Ponto%20Fixo.png)
 
 ### Ainda sobre Ponto Fixo e Operações Bit a Bit:
 
